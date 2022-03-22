@@ -9,16 +9,29 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (product) => {
+    console.log(product);
+    // cart.push (should not use that for react instead use this)
+    const newCart = [...cart, product];
+    setCart(newCart);
+  };
   return (
     <div className="shop-container">
       <div className="products-container">
         {products.map((product) => (
-          <Product key={product.id} product={product}></Product>
+          <Product
+            key={product.id}
+            product={product}
+            handleAddToCart={handleAddToCart}
+          ></Product>
         ))}
       </div>
 
       <div className="cart-container">
         <h3>This is for cart</h3>
+        <h5>Items: {cart.length}</h5>
       </div>
     </div>
   );
