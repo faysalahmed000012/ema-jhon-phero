@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useProducts } from "../../Hooks/useProducts";
 import { addToDb, getStoredCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
@@ -10,7 +11,6 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    console.log("local sotrage first line");
     const storedCart = getStoredCart();
     const savedCart = [];
     for (const id in storedCart) {
@@ -53,7 +53,11 @@ const Shop = () => {
       </div>
 
       <div className="cart-container">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart}>
+          <Link to="/order">
+            <button>Review Order</button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );
