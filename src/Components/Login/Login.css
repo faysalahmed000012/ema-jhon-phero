@@ -21,3 +21,33 @@
 
   color: #2a414f;
 }
+.input-group label {
+  display: block;
+  margin-left: 5px;
+}
+.input-group input {
+  width: 415px;
+  height: 55px;
+  border: 1px solid #95a0a7;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 24px;
+  padding: 0 7px;
+  margin-bottom: 20px;
+}
+.form-submit {
+  width: 415px;
+  height: 55px;
+  background: rgba(255, 153, 0, 0.3);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+}
+.form-submit:hover {
+  background: rgba(255, 153, 0, 0.5);
+}
+.form-link {
+  color: #ff9900;
+  text-decoration: none;
+}
