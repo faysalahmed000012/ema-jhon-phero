@@ -8,6 +8,20 @@
   gap: 45px;
   margin: 100px 50px;
 }
+
+.pagination {
+  margin: 30px auto;
+}
+
+.pagination button {
+  margin-right: 20px;
+  background-color: white;
+  border: 1px solid orange;
+}
+.pagination .selected {
+  background-color: orange;
+}
+
 @media screen and (max-width=1100px) {
   .products-container {
     grid-template-columns: repeat(2, 1fr);

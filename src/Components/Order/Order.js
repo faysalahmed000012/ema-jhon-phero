@@ -8,13 +8,12 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
 
 const Order = () => {
-  const [products, setProducts] = useProducts();
-  const [cart, setCart] = useCart(products);
+  const [cart, setCart] = useCart();
   let navigate = useNavigate();
   const handleRemoveProduct = (product) => {
-    const rest = cart.filter((item) => item.id !== product.id);
+    const rest = cart.filter((item) => item._id !== product._id);
     setCart(rest);
-    removeFromDb(product.id);
+    removeFromDb(product._id);
   };
   let quantity = 0;
   for (const item of cart) {
